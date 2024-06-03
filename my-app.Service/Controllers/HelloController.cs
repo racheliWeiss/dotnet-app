@@ -25,7 +25,7 @@ namespace my_app.Service.Controllers
         [Route("thank")]
         public async Task<IActionResult> Thank()
         {
-           HttpResponseMessage response = await _httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+           HttpResponseMessage response = await _httpClient.GetAsync("https://dotnet-app-user4-user4-application.apps.cluster-5shjw.dynamic.redhatworkshops.io/redhat/redhat");
             
             if (response != null)
             {
