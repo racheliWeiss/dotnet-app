@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using HttpClient client = new();
 
 namespace my_app.Service.Controllers
 {
@@ -17,7 +18,11 @@ namespace my_app.Service.Controllers
         [Route("Thank")]
         public IActionResult Thank()
         {
-            return Ok("Thanks Rivka");
+          HttpClient client = new ();
+           var json =  client.GetStringAsync("https://user4-donet-app.user4-application.cluster.local.svc/hello");
+      
+ 
+            return Ok("Thanks Rivka: " + json);
         }
     }
 }
