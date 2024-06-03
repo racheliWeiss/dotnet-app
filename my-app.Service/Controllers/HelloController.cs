@@ -19,7 +19,7 @@ namespace my_app.Service.Controllers
         public IActionResult Thank()
         {
            HttpClient httpClient = new HttpClient();
-           var result = httpClient.GetAsync("https://user4-dotnet-app.user4-application.cluster.local.svc/redhat/redhat");      
+           var result = httpClient.GetAsync("https://user4-dotnet-app.user4.application.cluster.local.svc/redhat/redhat");      
             return Ok("Thanks Rivka: " + result);
         }
     }
