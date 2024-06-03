@@ -12,5 +12,9 @@ namespace my_app.Service.Controllers
         {
             return Ok("Hello, World!");
         }
+
+        public IActionResult Thank(){
+            return Ok("Thanks Rivka");
+        }
     }
 }
