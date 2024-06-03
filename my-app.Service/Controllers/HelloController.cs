@@ -19,7 +19,7 @@ namespace my_app.Service.Controllers
         public IActionResult Thank()
         {
            HttpClient httpClient = new HttpClient();
-           var result = httpClient.GetAsync("https://dotnet-app-user4-user4-application.apps.cluster-5shjw.dynamic.redhatworkshops.io/redhat/redhat");      
+           var result = httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");      
            Console.Write(result);
             return Ok("Thanks Rivka aaa: " + result);
         }
