@@ -18,11 +18,9 @@ namespace my_app.Service.Controllers
         [Route("Thank")]
         public IActionResult Thank()
         {
-          HttpClient client = new ();
-           var json =  client.GetStringAsync("https://user4-donet-app.user4-application.cluster.local.svc/hello");
-      
- 
-            return Ok("Thanks Rivka: " + json);
+           HttpClient httpClient = new HttpClient();
+           var result = httpClient.GetAsync("https://user4-donet-app.user4-application.cluster.local.svc/hello").Result;      
+            return Ok("Thanks Rivka: " + result);
         }
     }
 }
