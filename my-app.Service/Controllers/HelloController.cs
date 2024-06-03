@@ -27,7 +27,7 @@ namespace my_app.Service.Controllers
         {
            HttpResponseMessage response = await _httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
             
-            if (response.IsSuccessStatusCode)
+            if (response != null)
             {
                 string responseBody = await response.Content.ReadAsStringAsync();
                 return Ok($"Thanks Rivka aaa: {responseBody}");
