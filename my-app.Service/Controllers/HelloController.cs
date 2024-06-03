@@ -29,8 +29,8 @@ namespace my_app.Service.Controllers
             
             if (response != null)
             {
-                string responseBody = await response.Content.ReadAsStringAsync();
-                return Ok($"Thanks Rivka aaa: {responseBody}");
+              //  string responseBody = await response.Content.ReadAsStringAsync();
+                return Ok($"Thanks Rivka aaa: {response}");
             }
             else
             {
