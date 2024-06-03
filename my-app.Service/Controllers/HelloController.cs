@@ -13,6 +13,8 @@ namespace my_app.Service.Controllers
             return Ok("Hello, World!");
         }
 
+        [HttpGet]
+        [Route("Thank")]
         public IActionResult Thank()
         {
             return Ok("Thanks Rivka");
