@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using HttpClient client = new();
+using System.Net.Http;
 
 namespace my_app.Service.Controllers
 {
@@ -15,13 +15,13 @@ namespace my_app.Service.Controllers
         }
 
         [HttpGet]
-        [Route("Thank")]
+        [Route("thank")]
         public IActionResult Thank()
         {
-           HttpClient httpClient = new HttpClient();
-           var result = httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");      
-           Console.Write(result);
-            return Ok("Thanks Rivka aaa: " + result);
+         //  HttpClient httpClient = new HttpClient();
+          // var result = httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");      
+        //   Console.Write(result);
+            return Ok("Thanks Rivka aaa: ");
         }
     }
 }
