@@ -20,6 +20,7 @@ namespace my_app.Service.Controllers
         {
            HttpClient httpClient = new HttpClient();
            var result = httpClient.GetAsync("https://dotnet-app-user4-user4-application.apps.cluster-5shjw.dynamic.redhatworkshops.io/redhat/redhat");      
+           Console.Write(result);
             return Ok("Thanks Rivka: " + result);
         }
     }
