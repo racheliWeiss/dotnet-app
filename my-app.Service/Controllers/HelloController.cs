@@ -7,6 +7,13 @@ namespace my_app.Service.Controllers
     [Route("[controller]")]
     public class HelloController : ControllerBase
     {
+        private readonly HttpClient _httpClient;
+
+        public HelloController(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
         [HttpGet]
         [Route("hello")]
         public IActionResult GetHello()
@@ -16,12 +23,19 @@ namespace my_app.Service.Controllers
 
         [HttpGet]
         [Route("thank")]
-        public IActionResult Thank()
+        public async Task<IActionResult> Thank()
         {
-         //  HttpClient httpClient = new HttpClient();
-          // var result = httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");      
-        //   Console.Write(result);
-            return Ok("Thanks Rivka aaa: ");
+           HttpResponseMessage response = await _httpClient.GetAsync("https://jsonplaceholder.typicode.com/posts/1");
+            
+            if (response.IsSuccessStatusCode)
+            {
+                string responseBody = await response.Content.ReadAsStringAsync();
+                return Ok($"Thanks Rivka aaa: {responseBody}");
+            }
+            else
+            {
+                return StatusCode((int)response.StatusCode, "Error fetching data.");
+            }
         }
     }
 }
